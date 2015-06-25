@@ -11,13 +11,13 @@ RUN apt-get update && \
     apt-get install -y git make autoconf build-essential g++ libc6-dev
 
 # Copy php
-COPY files/php-7.0.0alpha1.tar.gz /tmp/
+COPY files/php-7.0.0alpha2.tar.gz /tmp/
 
 RUN cd /tmp/ && \
-    tar -zxf php-7.0.0alpha1.tar.gz
+    tar -zxf php-7.0.0alpha2.tar.gz
 
 # Build php
-RUN cd /tmp/php-7.0.0alpha1 && \
+RUN cd /tmp/php-7.0.0alpha2 && \
     ./buildconf --force && \
     ./configure --quiet && \
     make --quiet && \

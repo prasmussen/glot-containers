@@ -5,6 +5,10 @@ MAINTAINER Petter Rasmussen "petter.rasmussen@gmail.com"
 RUN groupadd glot
 RUN useradd -m -d /home/glot -g glot -s /bin/bash glot
 
+# Install libs
+RUN cabal update && \
+    cabal install --global mtl
+
 # Copy files
 COPY files/runner /home/glot/
 

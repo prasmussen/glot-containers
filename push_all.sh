@@ -1,3 +1,4 @@
 #!/bin/bash
+shopt -s globstar
 
-docker images | grep "^glot/" | grep latest | awk '{print $1}' | xargs -I {} docker push {}:latest
+cat **/build.sh | grep -oP "glot/[^ ]+" | xargs -I {} docker push {}

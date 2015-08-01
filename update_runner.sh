@@ -1,7 +1,13 @@
 #!/bin/bash
+shopt -s globstar
 
-# Ensure all languages has a files dir
-ls -d */ | xargs -I {} mkdir -p {}files
 
-# Copy runner into all files dirs
-ls -d */files/ | xargs -I {} cp -v ~/runner {}
+for x in **/Dockerfile; do
+    dst="$(dirname $x)/files"
+
+    # Ensure that files dir exists
+    mkdir -p $dst
+
+    # Copy runner into files dir
+    cp -v ~/runner $dst
+done

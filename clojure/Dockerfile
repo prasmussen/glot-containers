@@ -5,12 +5,8 @@ MAINTAINER Petter Rasmussen "petter.rasmussen@gmail.com"
 RUN groupadd glot
 RUN useradd -m -d /home/glot -g glot -s /bin/bash glot
 
-# Move lein dir to glot
-RUN mv -f /root/.lein /home/glot/
-RUN chown glot:glot /home/glot/.lein -R
-
-# Add link to clojure in a location searched by code-runner
-RUN ln -s /home/glot/.lein/self-installs/leiningen-*-standalone.jar /usr/share/java/clojure.jar
+# Add clojure.jar link
+RUN ln -s /usr/share/java/leiningen-*-standalone.jar /usr/share/java/clojure.jar
 
 # Copy files
 COPY files/runner /home/glot/

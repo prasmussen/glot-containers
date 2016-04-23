@@ -2,7 +2,7 @@ FROM ubuntu:latest
 MAINTAINER Petter Rasmussen "petter.rasmussen@gmail.com"
 
 ENV LANG C.UTF-8
-ENV NIM_VERSION 0.11.2
+ENV NIM_VERSION 0.13.0
 
 # Install build tools, etc
 RUN apt-get update -qq && \

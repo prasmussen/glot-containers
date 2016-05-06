@@ -11,3 +11,6 @@ COPY files/runner /home/glot/
 USER glot
 WORKDIR /home/glot/
 CMD ["/home/glot/runner"]
+
+#Remove terminal colour codes for error reporting from Rakudo compiler output
+ENV RAKUDO_ERROR_COLOR 0

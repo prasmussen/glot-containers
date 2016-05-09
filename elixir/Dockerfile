@@ -1,4 +1,4 @@
-FROM nifty/elixir:latest
+FROM elixir:latest
 MAINTAINER Petter Rasmussen "petter.rasmussen@gmail.com"
 
 # Add user

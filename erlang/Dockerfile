@@ -1,4 +1,4 @@
-FROM correl/erlang:latest
+FROM erlang:latest
 MAINTAINER Petter Rasmussen "petter.rasmussen@gmail.com"
 
 # Add user

@@ -9,7 +9,7 @@ RUN useradd -m -d /home/glot -g glot -s /bin/bash glot
 RUN pip install numpy
 
 # Copy files
-COPY files/runner /home/glot/
+COPY runner /home/glot/
 
 USER glot
 WORKDIR /home/glot/

@@ -9,7 +9,7 @@ RUN useradd -m -d /home/glot -g glot -s /bin/bash glot
 RUN ln -s /usr/share/java/leiningen-*-standalone.jar /usr/share/java/clojure.jar
 
 # Copy files
-COPY files/runner /home/glot/
+COPY runner /home/glot/
 
 USER glot
 WORKDIR /home/glot/

@@ -1,4 +1,4 @@
-FROM java:8
+FROM java:latest
 MAINTAINER Petter Rasmussen "petter.rasmussen@gmail.com"
 
 # Add user

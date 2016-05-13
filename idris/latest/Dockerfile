@@ -19,3 +19,4 @@ COPY files/runner /home/glot/
 USER glot
 WORKDIR /home/glot/
 CMD ["/home/glot/runner"]
+ENTRYPOINT "/home/glot/runner"

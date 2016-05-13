@@ -26,3 +26,4 @@ RUN chown glot:glot -R /bootstrap
 USER glot
 WORKDIR /home/glot/
 CMD ["/home/glot/runner"]
+ENTRYPOINT "/home/glot/runner"

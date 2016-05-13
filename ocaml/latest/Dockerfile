@@ -1,9 +1,5 @@
-FROM ubuntu:latest
+FROM ocaml/ocaml:latest
 MAINTAINER Petter Rasmussen "petter.rasmussen@gmail.com"
-
-# Install ocaml
-RUN apt-get update
-RUN apt-get install -y ocaml
 
 # Add user
 RUN groupadd glot

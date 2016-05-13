@@ -49,7 +49,7 @@ RUN cabal update && \
         zlib
 
 # Copy files
-COPY runner /home/glot/
+COPY files/runner /home/glot/
 
 USER glot
 WORKDIR /home/glot/

@@ -19,7 +19,7 @@ RUN mkdir /bootstrap && \
 
 # Copy files
 COPY files/elm-io.sh /bootstrap/
-COPY runner /home/glot/
+COPY files/runner /home/glot/
 
 RUN chown glot:glot -R /bootstrap
 

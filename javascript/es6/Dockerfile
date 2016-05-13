@@ -15,7 +15,7 @@ RUN chmod +x /usr/local/sbin/node
 RUN chmod +x /usr/local/lib/node_modules/traceur/traceur
 
 # Copy files
-COPY runner /home/glot/
+COPY files/runner /home/glot/
 
 USER glot
 WORKDIR /home/glot/

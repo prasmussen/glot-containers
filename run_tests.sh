@@ -2,6 +2,7 @@
 set -e
 shopt -s globstar
 
+# Optional argument to test single image
 imageToTest=$1
 
 runTest() {

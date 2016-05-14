@@ -9,7 +9,7 @@ RUN groupadd glot
 RUN useradd -m -d /home/glot -g glot -s /bin/bash glot
 
 # Install elm
-RUN npm install -g elm
+RUN npm install -g elm@0.16.0
 
 # Bootstrap an elm app
 RUN mkdir /bootstrap && \

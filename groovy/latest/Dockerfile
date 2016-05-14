@@ -5,6 +5,14 @@ MAINTAINER Nish Tahir "nishtahir@outlook.com"
 RUN groupadd glot
 RUN useradd -m -d /home/glot -g glot -s /bin/bash glot
 
+# Prepare groovy env for glot
+RUN rm /root/.gvm/groovy/current
+RUN mv /root/.gvm /home/glot/
+RUN ln -s /home/glot/.gvm/groovy/2.* /home/glot/.gvm/groovy/current
+RUN chown glot:glot -R /home/glot/.gvm/groovy/current
+ENV GROOVY_HOME /home/glot/.gvm/groovy/current
+ENV PATH $GROOVY_HOME/bin:$PATH
+
 # Copy files
 COPY files/runner /home/glot/
 

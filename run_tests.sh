@@ -2,7 +2,9 @@
 set -e
 shopt -s globstar
 
-run_test () {
+imageToTest=$1
+
+runTest() {
     imageName=$1
     payloadFile=$2
     resultFile=$3
@@ -13,7 +15,6 @@ run_test () {
 
     if [ "$result" == "$expect" ]; then
         echo OK: $testName
-        exit 0
     else
         echo FAILED: $testName
         echo Result: $result
@@ -40,7 +41,10 @@ for dockerfilePath in $(find . -name "Dockerfile"); do
             testPath=$(dirname $payloadFile)
             resultFile="${testPath}/result.json"
 
-            run_test $imageName $payloadFile $resultFile
+            # If imageToTest is set; run only tests for that image – run all tests if not
+            if [ -z $imageToTest ] || [ $imageToTest == $imageName ] ;then
+                runTest $imageName $payloadFile $resultFile
+            fi
         done
     )
 done

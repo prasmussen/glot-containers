@@ -37,7 +37,7 @@ for dockerfilePath in **/Dockerfile; do
         # Ensure that the tests directory exist
         mkdir -p tests
 
-        # Find and run all tests
+        # Find and run tests
         for payloadFile in tests/**/payload.json; do
             testPath=$(dirname "$payloadFile")
             resultFile="${testPath}/result.json"

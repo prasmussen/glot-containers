@@ -1,0 +1,7 @@
+{
+  "language": "elm",
+  "files": [{
+    "name": "main.elm",
+    "content": "module Main where\n\nimport Console exposing (IO, putStrLn)\nimport Task exposing (Task)\n\nmain' : IO ()\nmain' = putStrLn \"Hello World!\"\n\nport runner : Signal (Task x ())\nport runner = Console.run main'"
+  }]
+}

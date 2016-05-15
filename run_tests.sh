@@ -11,7 +11,7 @@ runTest() {
     resultFile=$3
     testName="$imageName - $(basename "$(dirname "$payloadFile")")"
 
-    result=$(< "$payloadFile" docker run -i --rm "$imageName")
+    result=$(docker run -i --rm "$imageName" < "$payloadFile")
     expect=$(cat "$resultFile")
 
     if [ "$result" == "$expect" ]; then

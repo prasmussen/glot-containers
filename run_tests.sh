@@ -3,6 +3,7 @@ set -e
 shopt -s globstar
 
 # Optional argument to test single image
+# i.e. glot/python:latest
 imageToTest=$1
 
 runTest() {

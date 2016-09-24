@@ -14,6 +14,7 @@ RUN cabal update && \
         cgi \
         exceptions \
         fgl \
+        free \
         hashable \
         haskell-src \
         html \

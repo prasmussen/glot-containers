@@ -9,17 +9,22 @@ RUN groupadd glot
 RUN useradd -m -d /home/glot -g glot -s /bin/bash glot
 
 # Install elm
-RUN npm install -g elm@0.16.0
+RUN npm install -g elm
 
 # Bootstrap an elm app
 RUN mkdir /bootstrap && \
     cd /bootstrap && \
-    elm-package install -y laszlopandy/elm-console && \
+    npm install jsdom && \
+    elm-package install -y elm-lang/html && \
+    elm-package install -y elm-lang/svg && \
+    elm-package install -y evancz/elm-markdown && \
+    elm-package install -y elm-community/list-extra && \
+    elm-package install -y elm-community/maybe-extra && \
     elm-make
 
 # Copy files
-COPY files/elm-io.sh /bootstrap/
 COPY files/runner /home/glot/
+COPY files/app.js /bootstrap/
 
 RUN chown glot:glot -R /bootstrap
 

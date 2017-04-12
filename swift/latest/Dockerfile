@@ -1,4 +1,4 @@
-FROM swiftlang/swift:latest
+FROM swift:latest
 MAINTAINER Petter Rasmussen "petter.rasmussen@gmail.com"
 
 # Add user

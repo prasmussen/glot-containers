@@ -14,8 +14,9 @@ COPY files/traceur /usr/local/lib/node_modules/traceur/traceur
 RUN chmod +x /usr/local/sbin/node
 RUN chmod +x /usr/local/lib/node_modules/traceur/traceur
 
-# Copy files
-COPY files/runner /home/glot/
+# Install code-runner
+ADD https://github.com/prasmussen/glot-code-runner/releases/download/2017-04-12/runner /home/glot/runner
+RUN chmod +x /home/glot/runner
 
 USER glot
 WORKDIR /home/glot/

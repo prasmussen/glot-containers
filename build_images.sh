@@ -3,15 +3,15 @@ shopt -s globstar
 set -e
 
 for dockerfile in **/Dockerfile; do
-    tagDir="$(dirname "$dockerfile")"
-    imageDir="$(dirname "$tagDir")"
-    tag="$(basename "$tagDir")"
-    image="$(basename "$imageDir")"
-    imageName="$(echo "$image" "$tag" | awk '{print "glot/" $1 ":" $2}')"
+    tagPath=$(dirname "$dockerfile")
+    imagePath=$(dirname "$tagPath")
+    tag=$(basename "$tagPath")
+    image=$(basename "$imagePath")
+    imageName="glot/${image}:${tag}"
 
     # Build image
     (
-        cd "$tagDir"
+        cd "$tagPath"
         docker build --no-cache -t "$imageName" .
     )
 done

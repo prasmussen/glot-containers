@@ -1,4 +1,4 @@
-FROM schickling/rust:latest
+FROM scorpil/rust:stable
 MAINTAINER Petter Rasmussen "petter.rasmussen@gmail.com"
 
 # Add user

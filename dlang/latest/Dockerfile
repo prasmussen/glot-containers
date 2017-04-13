@@ -1,12 +1,5 @@
-FROM ubuntu:latest
+FROM dlanguage/dmd:latest
 MAINTAINER Petter Rasmussen "petter.rasmussen@gmail.com"
-
-# Install dlang
-RUN apt-get update
-RUN apt-get install -y wget
-RUN wget http://netcologne.dl.sourceforge.net/project/d-apt/files/d-apt.list -O /etc/apt/sources.list.d/d-apt.list
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends --allow-unauthenticated d-apt-keyring dmd-bin libc-dev
 
 # Add user
 RUN groupadd glot

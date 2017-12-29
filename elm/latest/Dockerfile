@@ -9,7 +9,7 @@ RUN groupadd glot
 RUN useradd -m -d /home/glot -g glot -s /bin/bash glot
 
 # Install elm
-RUN npm install -g elm
+RUN npm install -g elm --unsafe-perm=true --allow-root
 
 # Bootstrap an elm app
 RUN mkdir /bootstrap && \

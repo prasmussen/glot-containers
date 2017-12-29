@@ -1,5 +1,6 @@
-var jsdom = require("jsdom").jsdom;
-document = jsdom();
+var JSDOM = require("jsdom").JSDOM;
+var window = (new JSDOM('')).window;
+document = window.document;
 
 var elm = require("./elm.js");
 elm.Main.fullscreen();

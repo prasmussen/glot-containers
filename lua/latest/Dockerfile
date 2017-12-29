@@ -1,4 +1,4 @@
-FROM smutdose/lua:latest
+FROM jimho/lua:latest
 MAINTAINER Petter Rasmussen "petter.rasmussen@gmail.com"
 
 # Add user

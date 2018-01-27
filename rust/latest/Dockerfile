@@ -1,4 +1,4 @@
-FROM scorpil/rust:stable
+FROM rust:latest
 MAINTAINER Petter Rasmussen "petter.rasmussen@gmail.com"
 
 # Add user

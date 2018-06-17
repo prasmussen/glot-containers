@@ -12,6 +12,6 @@ for dockerfile in **/Dockerfile; do
     # Build image
     (
         cd "$tagPath"
-        docker build --no-cache -t "$imageName" .
+        docker build --no-cache --network host -t "$imageName" . || true
     )
 done

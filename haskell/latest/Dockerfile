@@ -7,7 +7,7 @@ RUN useradd -m -d /home/glot -g glot -s /bin/bash glot
 
 # Install libs
 RUN cabal update && \
-    cabal install --global \
+    cabal install --global --lib \
         async \
         attoparsec \
         case-insensitive \
@@ -16,10 +16,7 @@ RUN cabal update && \
         fgl \
         free \
         hashable \
-        haskell-src \
         html \
-        HTTP \
-        HUnit \
         mtl \
         multipart \
         network \

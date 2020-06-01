@@ -1,4 +1,4 @@
-FROM sebgod/mercury-stable:latest
+FROM sebgod/mercury:latest
 
 # Add user
 RUN groupadd glot
